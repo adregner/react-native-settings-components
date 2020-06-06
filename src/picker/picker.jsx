@@ -117,7 +117,7 @@ class SettingsPicker extends Component {
     };
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     const { value, multi } = this.props;
     this.setState({
       pickerValue: multi && isArray(value)
@@ -125,7 +125,7 @@ class SettingsPicker extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       pickerValue: nextProps.multi && isArray(nextProps.value)
         ? nextProps.value : [nextProps.value],
